@@ -1,0 +1,6 @@
+@mixin animationMixin($keyframes, $timing, $method, $repeat, $direction) {
+    animation: $keyframes $timing $method $repeat $direction;
+    -ms-animation: $keyframes $timing $method $repeat $direction;
+    -webkit-animation: $keyframes $timing $method $repeat $direction;
+    -moz-animation: $keyframes $timing $method $repeat $direction;
+}

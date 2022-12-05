@@ -1,0 +1,353 @@
+// Set charset
+@charset "utf-8";
+
+// Import colour variables
+@import "variables.scss";
+
+// Import mixins 
+// @import "mixins.scss";
+
+// Import the reset
+@import "normalize.scss";
+
+// Import animations
+@import "animations.scss";
+
+html {
+    box-sizing: border-box;
+    font-family: 'Nunito',sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: $dark_slime;
+    padding: 0px;
+    margin: 0px;
+    overflow-wrap: break-word;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+    overflow-wrap: inherit;
+    
+    // outline: 2px solid #f00 !important;
+}
+
+body {
+    margin: 0px;
+    background-image: url(../images/background.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;    
+    min-height: 100vh;
+    min-width: 290px;
+    display: flex;
+    position: relative;
+}
+
+#blackout_screen {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    min-height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    padding: 1em;
+    align-items: center;
+    justify-content: baseline;
+}
+
+#blackout_section {
+    margin: 0px;
+    max-width: 600px;
+    max-height: 90vh;
+    display: none;
+}
+
+main {
+    flex:1;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    /* max-height: 400px; */
+    height: auto;
+    border: none;
+}
+
+a {
+    color: rgb(20,39,56);
+    text-decoration: none;
+    font-weight: 700;
+    word-wrap: break-word;
+    outline: none;
+}
+
+a:hover {
+    color: rgb(51, 93, 130);
+}
+
+a:focus {
+    color: rgb(51, 93, 130);
+    border: 2px solid rgb(89, 149, 117);
+}
+
+a:active {
+    color: rgb(72, 131, 184);
+    border: 2px solid rgb(89, 149, 117);
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: $slime_green;
+    font-family: 'Fredoka One',sans-serif;
+    margin: 6px 0px;
+    font-weight: 500;
+    text-shadow:
+        0 0 16px white,
+        0 0 16px white,
+        0 0 16px white,
+        0 0 16px white,
+        0 0 16px white,
+        0 0 16px white;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: $slime_green;
+    font-family: 'Fredoka One',sans-serif;
+    margin: 0.5em 0px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: rgb(59, 59, 88);
+    margin: 20px 0px 0px 0px;
+    font-weight: 500;
+}
+
+p {
+    margin: 0px;
+    text-align: center;
+    line-height: 1.45;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 6px;
+    border: none;
+    margin: 16px 0px;
+    min-width: 100%;
+}
+
+article {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 6px;
+    padding: 0.6em;
+    margin: 16px;
+}
+
+#hint_container, #remaining_wrong_guesses_container {
+    margin: 0px;
+    padding: 0.1em;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+ul {
+    list-style-type:">";
+}
+
+li {
+    padding-left: 10px;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 10px;
+    margin: 16px 0px 0px 0px;
+    min-width: 100%;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.button_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    // height: 40px;
+    padding: 0.5em 1.5em;
+    margin: 1.3em 0px 1em 0px;
+    border-radius: 5em;
+    border: 1px solid rgba(255, 255, 255, 0);
+    background-color: $dark_slime;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+button:focus {
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); */
+    background-color: rgb(80, 150, 0);
+}
+
+button:hover {
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); */
+    background-color: rgb(80, 150, 0);
+}
+
+button:active {
+    background-color: $dark_slime;
+
+}
+
+#keyboard_container {
+    flex-flow: row wrap;
+    justify-content: center;
+
+}
+
+.letter_key {
+    width: 3em;
+    height: 3em;
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: rgb(100, 100, 100);
+    color: rgb(255, 255, 255);
+}
+
+.letter_key:hover {
+    background-color: rgb(120, 120, 120);
+}
+
+.letter_key:active {
+    background-color: rgb(140, 140, 140);
+    box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.4);
+}
+
+.wrong_letter, .wrong_letter:active, .wrong_letter:hover, .wrong_letter:focus {
+    background-color: rgb(204, 115, 115);
+    box-shadow: none;
+    cursor:not-allowed;
+}
+
+.right_letter, .right_letter:active, .right_letter:hover, .right_letter:focus {
+    background-color: $slime_green;
+    box-shadow: none;
+    cursor:not-allowed;
+}
+
+
+.wrapper {
+    margin: 0px auto;
+    padding: 0px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex:1;
+    min-width: 280px;
+}
+
+#slime_animation {
+    padding: 0px;
+    margin-bottom: 30px;
+    max-height: 45vh;
+}
+
+.slime_container {
+    position: relative;
+    top: 0px;
+    padding: 0px;   
+}
+
+.animated {
+    @include animationMixin(bob 1.6s ease-in-out infinite alternate);
+}
+
+.slime_container img:first-child {
+    position: relative;
+    top:0px;
+    left:0px;
+}
+
+.slime_container img {
+    position: absolute;
+    top:0px;
+    left:0px;
+    max-height: 33vh;
+    margin: 0px;
+}
+
+#slime_img {
+    z-index: 10;
+}
+
+#remaining_balloons_span {
+    font-size: 1.5em;
+    color: $balloon_red;
+    font-family: 'Fredoka One',sans-serif;
+    padding: 0px 0.1em;
+}
+
+#guesses_container p{
+    font-size: 1.5em;
+    letter-spacing: 0.4em;
+}
+
+#gameplay_inputs_container {
+    display: none;
+}
+
+#victory_article {
+    display: none;
+    padding: 0.5em;
+    max-width: 700px;
+}
+
+#defeat_article {
+    display: none;
+    padding: 0.5em;
+    max-width: 700px;
+}
+
+#blackout_screen img {
+    max-height: 60vh;
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+#blackout_screen p {
+   padding: 0px 1em 1em 1em;
+}
+
+@media (min-width:410px){
+
+    body {
+        padding: 0px 12px;
+    }
+
+    h1 {
+        font-size: 2.7rem;
+        font-weight: 400;
+    }
+}
+
+@media (min-width:1000px){
+    .wrapper {
+        max-width: 1000px;
+    }
+
+    footer {
+        border-radius: 6px 6px 0px 0px;
+    }
+}

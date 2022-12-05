@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Save the Slime | COMP 2132</title>
+    <!-- Author: Jim Hodgson     -->         
+    <meta charset="UTF-8">  
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <div id="blackout_screen">
+        <section id="blackout_section">
+            <article id="victory_article">
+                <img src="images/victory_image.png" alt="Slime is sitting on a trampoline in a forest clearing, his friends have saved him!">
+                <h2>You found his password!</h2>
+                <p>Congratulations! You unlocked Slime's phone with the password "<span></span>", and his friends were able to find his landing spot!</p>
+            </article>
+            <article id="defeat_article">
+                <img src="images/defeat_image.png" alt="A puddle of slime sits alone and sad in the forest. He couldn't call for help.">
+                <h2>Out of balloons!</h2>
+                <p>Poor little Slime forgot that his password was "<span></span>", and couldn't call his friends to help him.</p>
+            </article>
+            <button id="new_game_button">New Game</button>
+        </section>
+    </div>
+    <div class="wrapper">
+        <header>
+            <h1>Save the Slime!</h1>
+        </header>
+        <main>
+            <section id="slime_animation">
+                <div class="slime_container animated">
+                    <img id="balloon_01" src="images/balloon_01.png" alt="A picture of a red balloon">
+                    <img id="balloon_02" src="images/balloon_02.png" alt="A picture of a red balloon">
+                    <img id="balloon_03" src="images/balloon_03.png" alt="A picture of a red balloon">
+                    <img id="balloon_04" src="images/balloon_04.png" alt="A picture of a red balloon">
+                    <img id="balloon_05" src="images/balloon_05.png" alt="A picture of a red balloon">
+                    <img id="balloon_06" src="images/balloon_06.png" alt="A picture of a red balloon">
+                    <img id="balloon_07" src="images/balloon_07.png" alt="A picture of a red balloon">
+                    <img id="slime_image" src="images/slime_00.png" alt="A cute slime with a belt floating above a mountain range">
+                    <img id="phone_image" src="images/phone_locked.png" alt="A phone on the 'locked' screen">
+                </div>
+                
+            </section>
+            <section id="guessing_box">
+                <article id="introduction_container">
+                    <p>Our slimy friend's afternoon adventure has taken a turn! The wind has picked him up 
+                        and carried him away from the landing pad, but he's forgotten his phone passcode to call 
+                        for help! He's running out of time before all his balloons are gone, can you help him guess 
+                        his password and get home safely?</p>
+                    <button id="hide_introduction_button">I'll save you, little slime!</button>
+                </article>
+                <div id="gameplay_inputs_container">
+                    <article id="remaining_wrong_guesses_container">
+                        <p>Slime has <span id="remaining_balloons_span">7</span> balloons left</p>
+                    </article>
+                    <article id="guesses_container">
+                        <p>******</p>
+                    </article>
+                    <article id="hint_container">
+                        <p></p>
+                    </article>
+                    <article id="keyboard_container">
+                        <button class="letter_key">A</button>
+                        <button class="letter_key">B</button>
+                        <button class="letter_key">C</button>
+                        <button class="letter_key">D</button>
+                        <button class="letter_key">E</button>
+                        <button class="letter_key">F</button>
+                        <button class="letter_key">G</button>
+                        <button class="letter_key">H</button>
+                        <button class="letter_key">I</button>
+                        <button class="letter_key">J</button>
+                        <button class="letter_key">K</button>
+                        <button class="letter_key">L</button>
+                        <button class="letter_key">M</button>
+                        <button class="letter_key">N</button>
+                        <button class="letter_key">O</button>
+                        <button class="letter_key">P</button>
+                        <button class="letter_key">Q</button>
+                        <button class="letter_key">R</button>
+                        <button class="letter_key">S</button>
+                        <button class="letter_key">T</button>
+                        <button class="letter_key">U</button>
+                        <button class="letter_key">V</button>
+                        <button class="letter_key">W</button>
+                        <button class="letter_key">X</button>
+                        <button class="letter_key">Y</button>
+                        <button class="letter_key">Z</button>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <span>&copy;</span> Copyleft 2022
+        </footer>
+    </div>
+</body>
+</html>
